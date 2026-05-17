@@ -16,7 +16,7 @@ Sviluppata con un approccio focalizzato sulla portabilità e sulle prestazioni:
 
 - **React 18**: Gestione dello stato e dell'interattività dei componenti.
 - **SVG Dinamico**: Diagramma ad alta fedeltà con mappatura dei segnali hardware (VA, PA, INTR, INTA, IRQ, Bus Control).
-- **Vanilla CSS**: Layout ingegneristico pulito, ispirato agli schemi tecnici industriali.
+- **Vanilla CSS**
 - **Zero-Build Architecture**: Progettata per essere eseguita istantaneamente nel browser senza necessità di build step complessi (CSR tramite Babel in-browser).
 
 ## Funzionalità Chiave
