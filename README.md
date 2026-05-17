@@ -23,5 +23,5 @@ Sviluppata con un approccio focalizzato sulla portabilità e sulle prestazioni:
 
 - **Schema Hardware Completo**: Rappresentazione dettagliata di CPU, MMU, TLB, Cache, RAM, Page Tables, APIC, DMA e System Bus.
 - **Documentazione Integrata**: Oltre 500 righe di teoria specifica (terminologia d'esame) consultabili cliccando sui singoli nodi.
-- **Visual Evidence**: Integrazione di oltre 25 diagrammi originali e cronogrammi estratti dalle dispense ufficiali del corso.
+- **Visual Evidence**: Integrazione di oltre 25 diagrammi cliccabili originali e cronogrammi estratti dalle dispense ufficiali del corso.
 - **Hardware Signaling**: Visualizzazione esplicita dei percorsi dati e dei segnali di controllo (M/IO#, W/R#, EOI MMIO, ecc.).
