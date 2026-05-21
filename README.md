@@ -1,27 +1,30 @@
 # ARCH-EXPLORER 64 ◈ Interactive Hardware Model
 
-**ARCH-EXPLORER 64** è un'applicazione web interattiva progettata per visualizzare e analizzare in dettaglio l'architettura completa del calcolatore (AMD64 / PCI), basata rigorosamente sul corso di **Calcolatori Elettronici (UNIPI)**.
+**ARCH-EXPLORER 64** è un'applicazione web interattiva progettata per visualizzare, navigare e comprendere l'architettura completa del calcolatore (x86-64 / PCI), basata rigorosamente sul materiale didattico e le specifiche del corso di **Calcolatori Elettronici (UNIPI)**.
 
 🚀 **Prova l'app qui**: [archexplorer64.vercel.app](https://archexplorer64.vercel.app/)
 
-![Anteprima](Anteprima.png)
-
 ## Finalità
+L'app è uno strumento di **supporto allo studio per l'esame orale**. Supera la staticità dei diagrammi tradizionali, permettendo di:
+* **Esplorare la gerarchia hardware**: Collegare visivamente CPU, MMU, Cache, RAM e Bus.
+* **Studiare i meccanismi critici**: Approfondire il *table-walk* dell'MMU, il funzionamento del bus mastering DMA, la gestione degli interrupt tramite APIC e il *context switch* del kernel.
+* **Consultare documentazione tecnica**: Accedere a spiegazioni concise e rigorose, modellate sulle domande tipiche d'esame.
 
-L'app nasce come strumento avanzato di supporto allo studio per l'esame orale. Permette di navigare visivamente tra i componenti hardware e approfondire i meccanismi micro-architetturali del sistema, rendendo esplicite le connessioni tra teoria e implementazione reale del Kernel.
+## Funzionalità Principali
+* **Diagramma Hardware Interattivo**: Navigazione intuitiva tramite clic sui blocchi (CPU, MMU, BUS, ecc.).
+* **Sidebar Contestuale**: Ogni blocco apre una vista dettagliata con:
+    * **Concetti Teorici**: Spiegazioni focalizzate sui punti chiave dell'esame (es. EOI, Page Fault, TLB miss).
+    * **Riferimenti Grafici**: Galleria di schemi e immagini originali estratti dal materiale del corso.
+* **Visual Evidence**: Rappresentazione dei segnali hardware (es. `M/IO#`, `HOLD/HLDA`, `INTA`) per chiarire le interazioni tra componenti.
+* **Analisi dell'Implementazione**: Dettagli su come il nucleo didattico realizza le astrazioni (es. salvataggio contesto, gestione semafori, preparazione PRD per il DMA)
 
-## Stack Tecnologico
+## Obiettivi Didattici
+L'applicazione copre gran parte del materiale d'esame, inclusi:
+* **Pipeline e Out-of-Order**: Pipeline a 5 stadi, Hazard (RAW/Controllo), Branch Prediction e ROB.
+* **Gestione della Memoria**: Page tables a 4 livelli, TLB, Huge Pages (2MiB/1GiB) e finestra fisica (FM).
+* **Interrupt e I/O**: Protocollo INTR/INTA, configurazione APIC, polling vs interrupt-driven e DMA bus mastering.
+* **Kernel Didattico**: Struttura dei processi, scheduler preemptive, primitive di sincronizzazione e gestione del contesto.
 
-Sviluppata con un approccio focalizzato sulla portabilità e sulle prestazioni:
+---
 
-- **React 18**: Gestione dello stato e dell'interattività dei componenti.
-- **SVG Dinamico**: Diagramma ad alta fedeltà con mappatura dei segnali hardware (VA, PA, INTR, INTA, IRQ, Bus Control).
-- **Vanilla CSS**
-- **Zero-Build Architecture**: Progettata per essere eseguita istantaneamente nel browser senza necessità di build step complessi (CSR tramite Babel in-browser).
-
-## Funzionalità Chiave
-
-- **Schema Hardware Completo**: Rappresentazione dettagliata di CPU, MMU, TLB, Cache, RAM, Page Tables, APIC, DMA e System Bus.
-- **Documentazione Integrata**: Oltre 500 righe di teoria specifica (terminologia d'esame) consultabili cliccando sui singoli nodi.
-- **Visual Evidence**: Integrazione di oltre 25 diagrammi cliccabili originali e cronogrammi estratti dalle dispense ufficiali del corso.
-- **Hardware Signaling**: Visualizzazione esplicita dei percorsi dati e dei segnali di controllo (M/IO#, W/R#, EOI MMIO, ecc.).
+*Progetto didattico non ufficiale, realizzato per supportare la preparazione all'esame di Calcolatori Elettronici (UNIPI).*
