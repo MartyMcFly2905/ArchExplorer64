@@ -4,6 +4,8 @@
 
 🚀 **Prova l'app qui**: [archexplorer64.vercel.app](https://archexplorer64.vercel.app/)
 
+![Anteprima](Anteprima.png)
+
 ## Funzionalità Principali
 * **Diagramma Hardware Interattivo**: Navigazione intuitiva tramite clic sui blocchi (CPU, MMU, BUS, ecc.).
 * **Sidebar Contestuale**: Ogni blocco apre una vista dettagliata con:
