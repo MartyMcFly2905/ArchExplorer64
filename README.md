@@ -10,12 +10,12 @@
 * **Diagramma Hardware Interattivo**: Navigazione intuitiva tramite clic sui blocchi (CPU, MMU, BUS, ecc.).
 * **Sidebar Contestuale**: Ogni blocco apre una vista dettagliata con:
     * **Concetti Teorici**: Spiegazioni focalizzate sui punti chiave dell'esame (es. EOI, Page Fault, TLB miss).
-    * **Riferimenti Grafici**: Galleria di immagini originali (schemi a blocchi, cronogrammi, flussi di dati) estratti dal materiale del corso.
-* **Visual Evidence**: Rappresentazione dinamica dei segnali hardware (es. `M/IO#`, `HOLD/HLDA`, `INTA`) per chiarire le interazioni tra componenti.
+    * **Riferimenti Grafici**: Galleria di immagini e schemi originali estratti dalle dispense del corso.
+* **Visual Evidence**: Rappresentazione di alcuni segnali hardware (es. `M/IO#`, `HOLD/HLDA`, `INTA`) per chiarire le interazioni tra componenti.
 * **Analisi dell'Implementazione**: Dettagli su come il nucleo didattico realizza le astrazioni (es. salvataggio contesto, gestione semafori, preparazione PRD per il DMA).
 
-## Obiettivi Didattici
-L'applicazione copre l'intero spettro del materiale d'esame, inclusi:
+## Obiettivi
+L'applicazione copre gran parte del materiale d'esame, inclusi:
 * **Pipeline e Out-of-Order**: Pipeline a 5 stadi, Hazard (RAW/Controllo), Branch Prediction e ROB.
 * **Gestione della Memoria**: Page tables a 4 livelli, TLB, Huge Pages (2MiB/1GiB) e finestra fisica (FM).
 * **Interrupt e I/O**: Protocollo INTR/INTA, configurazione APIC, polling vs interrupt-driven e DMA bus mastering.
