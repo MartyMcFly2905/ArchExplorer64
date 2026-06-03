@@ -6,6 +6,8 @@
 
 ![Anteprima](Anteprima.png)
 
+![Implementazioni Nucleo](Nucleo.png)
+
 ## Contenuti
 
 L'app riunisce due strumenti nello stesso ambiente:
