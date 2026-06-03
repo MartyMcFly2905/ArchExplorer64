@@ -1,34 +1,36 @@
-# ARCH-EXPLORER 64 ◈ Interactive Hardware Model
+# ARCH-EXPLORER 64
 
-**ARCH-EXPLORER 64** è un'applicazione web interattiva progettata per visualizzare, navigare e comprendere l'architettura completa del calcolatore (x86-64 / PCI), basata rigorosamente sul materiale didattico e le specifiche del corso di **Calcolatori Elettronici (UNIPI)**.
+**ARCH-EXPLORER 64** è un'applicazione web interattiva per ripassare l'architettura del calcolatore e il nucleo didattico del corso di **Calcolatori Elettronici (UNIPI)**.
 
 🚀 **Prova l'app qui**: [archexplorer64.vercel.app](https://archexplorer64.vercel.app/)
 
 ![Anteprima](Anteprima.png)
 
-## Funzionalità Principali
-* **Diagramma Hardware Interattivo**: Navigazione intuitiva tramite clic sui blocchi (CPU, MMU, BUS, ecc.).
-* **Sidebar Contestuale**: Ogni blocco apre una vista dettagliata con:
-    * **Concetti Teorici**: Spiegazioni focalizzate sui punti chiave dell'esame (es. EOI, Page Fault, TLB miss).
-    * **Riferimenti Grafici**: Galleria di immagini e schemi originali estratti dalle dispense del corso.
-* **Visual Evidence**: Rappresentazione di alcuni segnali hardware (es. `M/IO#`, `HOLD/HLDA`, `INTA`) per chiarire le interazioni tra componenti.
-* **Analisi dell'Implementazione**: Dettagli su come il nucleo didattico realizza le astrazioni (es. salvataggio contesto, gestione semafori, preparazione PRD per il DMA).
+## Contenuti
 
-## Obiettivi
-L'applicazione copre gran parte del materiale d'esame, inclusi:
-* **Pipeline e Out-of-Order**: Pipeline a 5 stadi, Hazard (RAW/Controllo), Branch Prediction e ROB.
-* **Gestione della Memoria**: Page tables a 4 livelli, TLB, Huge Pages (2MiB/1GiB) e finestra fisica (FM).
-* **Interrupt e I/O**: Protocollo INTR/INTA, configurazione APIC, polling vs interrupt-driven e DMA bus mastering.
-* **Kernel Didattico**: Struttura dei processi, scheduler preemptive, primitive di sincronizzazione e gestione del contesto.
+L'app riunisce due strumenti nello stesso ambiente:
 
-## Stack Tecnologico e Realizzazione
-L'applicazione è stata sviluppata con un focus particolare sulla portabilità, le prestazioni e la semplicità di esecuzione nel browser:
+* **Schema generale dell'architettura**: una mappa interattiva dei blocchi principali del sistema, con CPU, MMU, TLB, cache, RAM, bus, APIC, dispositivi di I/O, DMA, page table e nucleo.
+* **Sidebar di ripasso**: ogni blocco apre spiegazioni mirate all'orale, collegamenti tra componenti, immagini e schemi del materiale di studio.
+* **Implementazioni e ASM**: una sezione dedicata alle primitive e al codice del nucleo, con schede colorate su `salva_stato`, `carica_stato`, scheduler, semafori, timer, I/O, processi esterni, `access()` e preparazione delle PRD per il DMA.
+* **Percorsi d'esame**: i contenuti sono organizzati per collegare teoria, segnali hardware, memoria virtuale, interrupt, DMA e implementazione effettiva del kernel didattico.
 
-* **Architettura "Zero-Build"**: L'app è progettata per essere eseguita istantaneamente. Sfrutta **React 18** insieme a **Babel in-browser** per compilare il codice JSX direttamente lato client, eliminando la necessità di configurazioni complesse o build step.
-* **Visualizzazione SVG Dinamica**: L'intero schema hardware è renderizzato tramite componenti SVG reattivi.
-* **Gestione Dati Centralizzata**: La conoscenza teorica e la struttura hardware sono memorizzate in un database JSON integrato. Questo approccio permette di associare dinamicamente le descrizioni teoriche ai nodi grafici, facilitando l'aggiornamento dei contenuti senza dover modificare la logica di rendering.
-* **Performance e Styling**: Basata su Vanilla CSS con un approccio minimale, l'interfaccia è pensata per essere leggera e accessibile, ottimizzata per la consultazione rapida durante la preparazione dell'esame.
+## Argomenti Coperti
+
+* Pipeline, hazard, branch prediction, esecuzione fuori ordine, rinomina e ROB.
+* Traduzione degli indirizzi, page table a quattro livelli, TLB, bit di protezione, huge pages e finestra fisica.
+* Bus di sistema, cicli di lettura/scrittura, wait states, PCI, BAR e bus mastering.
+* Interrupt, APIC, IDT, cambio di privilegio, frame di interrupt e ritorno con `iretq`.
+* Strutture del nucleo didattico: processi, contesto, scheduler, semafori, timer, driver, processi esterni e controlli sui buffer utente.
+
+## Implementazione
+
+L'app è un singolo file HTML pensato per essere facilmente pubblicabile come sito statico. Lo schema generale usa React 18 e SVG inline per disegnare i blocchi e gestire la sidebar; i contenuti sono raccolti in una struttura dati JavaScript incorporata nel file.
+
+La sezione **Implementazioni e ASM** è integrata come vista interna nello stesso file, mantenendo le schede originali e il loro stile a card. Il tema chiaro/scuro è condiviso tra schema e implementazioni, così la navigazione resta coerente anche passando da una vista all'altra.
+
+Non sono richiesti passaggi di build per consultare l'app pubblicata: la versione da usare è quella esposta su Vercel.
 
 ---
 
-*Progetto personale non ufficiale, realizzato per supportare la preparazione all'esame di Calcolatori Elettronici (UNIPI).*
+***Progetto personale non ufficiale, realizzato per supportare la preparazione all'esame di Calcolatori Elettronici (UNIPI).***
