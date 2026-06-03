@@ -27,9 +27,8 @@ L'app riunisce due strumenti nello stesso ambiente:
 
 ## Implementazione
 
-L'app è un singolo file HTML pensato per essere facilmente pubblicabile come sito statico. Lo schema generale usa React 18 e SVG inline per disegnare i blocchi e gestire la sidebar; i contenuti sono raccolti in una struttura dati JavaScript incorporata nel file.
-
-La sezione **Implementazioni e ASM** è integrata come vista interna nello stesso file, mantenendo le schede originali e il loro stile a card. Il tema chiaro/scuro è condiviso tra schema e implementazioni, così la navigazione resta coerente anche passando da una vista all'altra.
+L'app è un singolo file HTML pensato per essere facilmente pubblicabile come sito statico. Lo schema generale usa React 18 e SVG inline per disegnare i blocchi e gestire la sidebar; i contenuti sono raccolti in una struttura dati JavaScript incorporata nel file.  
+La sezione **Implementazioni e ASM** è integrata come vista interna nello stesso file, mantenendo le schede originali e il loro stile a card. 
 
 Non sono richiesti passaggi di build per consultare l'app pubblicata: la versione da usare è quella esposta su Vercel.
 
